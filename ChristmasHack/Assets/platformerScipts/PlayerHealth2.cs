@@ -1,16 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth2 : MonoBehaviour {
 
 
 	public int health = 10;
+    public Slider HpBar;
+    public Text HpText;
     int lives = 3;
+    public int Exp = 0;
+    public int level = 1;
+    public Slider ExpBar;
+    public Text ExpText;
+
 	void Start () {
         //PlayerPrefs.SetInt("Lives", lives);
         lives = PlayerPrefs.GetInt("Lives");
-	}
+        HpBar.GetComponent<Slider>().value = health;
+        ExpBar.GetComponent<Slider>().value = Exp;
+        HpBar.GetComponent<Text>().text = "Health: " + health;
+    }
 	
 	// Update is called once per frame
 	void Update () {
