@@ -15,8 +15,13 @@ public class PlayerHP : MonoBehaviour {
     public int liveCount = 3;
     public Text Lives;
     public GameObject Prefab;
+    public GameObject SnowBallz;
     public int Levels = 1;
     public Text level;
+    public int SnowBalls = 0;
+    public Text SnowierBalls;
+    public float shootSpeed = 10;
+    float timer = 0;
 
     void Start()
     {
@@ -34,6 +39,25 @@ public class PlayerHP : MonoBehaviour {
         Coins.GetComponent<Text>().text = "Coins: " + coinCount;
         Lives.GetComponent<Text>().text = "Lives: " + liveCount;
         level.GetComponent<Text>().text = "Level:" + Levels;
+        SnowierBalls.GetComponent<Text>().text = "X" + SnowBalls;
+    }
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (Input.GetButton("Fire1") && Time.timeScale == 1)
+        {
+            var mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            mousePosition.z = 0;
+            Vector3 shootDir = mousePosition - transform.position;
+            shootDir.Normalize();
+            shootDir = shootDir * shootSpeed;
+            //when calculating a vector from a to b
+            //always do destination - start position
+            GameObject bullet = (GameObject)Instantiate(SnowBallz, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = shootDir;
+            Destroy(bullet, 0.5f);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
