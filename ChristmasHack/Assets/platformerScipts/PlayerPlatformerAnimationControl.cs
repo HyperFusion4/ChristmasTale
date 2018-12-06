@@ -13,19 +13,13 @@ public class PlayerPlatformerAnimationControl : MonoBehaviour {
 	void Update () {
         if (Input.GetAxis("Horizontal") != 0) 
         {
-            float x = Input.GetAxis("Horizontal");
-            GetComponent<Animator>().SetFloat("X", x);
+            int x = (int)Input.GetAxisRaw("Horizontal");
+            GetComponent<Animator>().SetInteger("X", x);
             GetComponent<Animator>().SetFloat("Y", 0);
-            GetComponent<Animator>().SetBool("Idle", false);
-        }else if(Input.GetAxis("Vertical") != 0)
-        {
-            float y = Input.GetAxis("Vertical");
-            GetComponent<Animator>().SetFloat("Y", y);
-            GetComponent<Animator>().SetFloat("X", 0);
-            GetComponent<Animator>().SetBool("Idle", false);
+            GetComponent<Animator>().SetBool("Ground", true);
         }else
         {
-            GetComponent<Animator>().SetBool("Idle", true);
+            GetComponent<Animator>().SetBool("Ground", true);
             GetComponent<Animator>().SetFloat("X", 0);
             GetComponent<Animator>().SetFloat("Y", 0);
         }

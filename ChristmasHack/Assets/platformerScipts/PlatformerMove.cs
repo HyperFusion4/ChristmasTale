@@ -12,6 +12,12 @@ public class PlatformerMove : MonoBehaviour {
     void Update () {
         //Maintain Gravity
         float moveX = Input.GetAxis("Horizontal");
+        int x = (int)Input.GetAxisRaw("Horizontal");
+        
+        GetComponent<Animator>().SetFloat("X", x);
+        bool idle = (x == 0);
+        GetComponent<Animator>().SetBool("Idle", idle);
+
         Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
         velocity.x = moveX * moveSpeed;
         GetComponent<Rigidbody2D>().velocity = velocity;
@@ -27,6 +33,7 @@ public class PlatformerMove : MonoBehaviour {
      if (collision.gameObject.layer == 8)
         {
             grounded = true;
+            GetComponent<Animator>().SetBool("Ground", true);
         }   
     }
 
@@ -35,6 +42,7 @@ public class PlatformerMove : MonoBehaviour {
         if (collision.gameObject.layer == 8)
         {
             grounded = false;
+            GetComponent<Animator>().SetBool("Ground", false);
         }
     }
 
@@ -43,6 +51,7 @@ public class PlatformerMove : MonoBehaviour {
         if (collision.gameObject.layer == 8)
         {
             grounded = true;
+            GetComponent<Animator>().SetBool("Ground", true);
         }
     }
 }
