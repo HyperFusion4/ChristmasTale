@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuBottons : MonoBehaviour {
 
-    int lives = 3;
+    int liveCount = 3;
+    int coinCount = 0;
     public void NewGame()
     {
-        PlayerPrefs.SetInt("Lives", lives);
+        PlayerPrefs.SetInt("Lives", liveCount);
+        PlayerPrefs.SetInt("CandyCane", coinCount);
         SceneManager.LoadScene("Level1");
     }
 
@@ -21,4 +23,10 @@ public class MenuBottons : MonoBehaviour {
     {
         SceneManager.LoadScene("Controls");
     }
+
+    public void MissionMode()
+    {
+        SceneManager.LoadScene("MissionMode");
+    }
+
 }
