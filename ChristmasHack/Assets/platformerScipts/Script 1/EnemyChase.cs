@@ -29,7 +29,6 @@ public class EnemyChase : MonoBehaviour {
             home = false;
             chaseDirection.Normalize();
             GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
-            GetComponent<Animator>().SetBool("Idle", false);
         }else if (home == false)
         {
             //see how far away we are from home
@@ -40,7 +39,6 @@ public class EnemyChase : MonoBehaviour {
                 home = true;
                 transform.position = startPosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-                GetComponent<Animator>().SetBool("Idle", true);
             }else
             {
                 //go home
