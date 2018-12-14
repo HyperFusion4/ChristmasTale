@@ -120159,6 +120159,21 @@ Prefab:
       propertyPath: orthographic size
       value: 3.0235758
       objectReference: {fileID: 0}
+    - target: {fileID: 61027649788726206, guid: fd21da05f939731448c23d01038a3291,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
+    - target: {fileID: 50198564517145204, guid: fd21da05f939731448c23d01038a3291,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
+    - target: {fileID: 70191835145029900, guid: fd21da05f939731448c23d01038a3291,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd21da05f939731448c23d01038a3291, type: 2}
   m_IsPrefabAsset: 0

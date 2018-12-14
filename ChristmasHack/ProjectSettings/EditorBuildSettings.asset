@@ -33,6 +33,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Lose.unity
     guid: f846474fd22da8c42a28daf6883fbd0b
   - enabled: 1
-    path: Assets/Scenes/win.unity
+    path: Assets/Scenes/Win.unity
     guid: 84c94a7ef58ccf249ae7f6ea36da0a51
+  - enabled: 1
+    path: Assets/Scenes/CoinLess/Level1(CL).unity
+    guid: 0ee5311932bc41b42a4dc7a16d673b04
+  - enabled: 1
+    path: Assets/Scenes/CoinLess/Level2(CL).unity
+    guid: 5b9d1b9da25364b40b690e339c183d40
+  - enabled: 1
+    path: Assets/Scenes/CoinLess/Level3(CL).unity
+    guid: 5e92763200e068544ba2f573599c6fd0
+  - enabled: 1
+    path: Assets/Scenes/CoinLess/Level4(CL).unity
+    guid: 1e15c5ceb1019414f85bbc88c706c61e
+  - enabled: 1
+    path: Assets/Scenes/CoinLess/Level5(CL).unity
+    guid: a6914dbe3d382724991603721164a064
   m_configObjects: {}
