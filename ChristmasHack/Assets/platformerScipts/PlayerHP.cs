@@ -19,9 +19,10 @@ public class PlayerHP : MonoBehaviour {
     public int Levels = 1;
     public Text level;
     public int SnowBalls = 0;
+    public float timer = 300;
+    public Text TimerText;
     public Text SnowierBalls;
     public float shootSpeed = 10;
-    float timer = 0;
 
     void Start()
     {
@@ -40,10 +41,20 @@ public class PlayerHP : MonoBehaviour {
         Lives.GetComponent<Text>().text = "Lives: " + liveCount;
         level.GetComponent<Text>().text = "Level:" + Levels;
         SnowierBalls.GetComponent<Text>().text = "X" + SnowBalls;
+        TimerText.GetComponent<Text>().text = "Time " + timer;
     }
     void Update()
     {
-        timer += Time.deltaTime;
+        timer -= Time.deltaTime;
+       
+        if (timer <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            liveCount--;
+            PlayerPrefs.SetInt("Lives", liveCount - 1);
+
+        }
+
         if (Input.GetButton("Fire1") && Time.timeScale == 1)
         {
             var mousePosition = Input.mousePosition;
@@ -57,7 +68,9 @@ public class PlayerHP : MonoBehaviour {
             GameObject bullet = (GameObject)Instantiate(SnowBallz, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = shootDir;
             Destroy(bullet, 0.5f);
+           
         }
+        TimerText.GetComponent<Text>().text = "Time " + Mathf.RoundToInt(timer);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
