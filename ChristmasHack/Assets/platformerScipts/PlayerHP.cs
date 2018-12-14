@@ -119,6 +119,10 @@ public class PlayerHP : MonoBehaviour {
             Destroy(collision.gameObject);
             PlayerPrefs.SetInt("Lives", liveCount + 1);
         }
+        if (collision.gameObject.tag == "Death")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
 

@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 262135153}
   m_Layer: 0
   m_Name: New Sprite (1)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152324,7 +152324,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 931795658}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -152347,7 +152347,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -152361,7 +152361,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 931795658}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3a05f1fbd2b6789408c5acc814eda2f5, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -152724,7 +152724,7 @@ GameObject:
   - component: {fileID: 1038425562}
   m_Layer: 0
   m_Name: New Sprite (2)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158903,6 +158903,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1681774434}
   m_CullTransparentMesh: 0
+--- !u!1 &1686578837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1171404577320292, guid: 53de4cbd16718924bbb476317864f79e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1024885517}
+--- !u!114 &1686578838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686578837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a7dac3c52019449df45dd12fbf0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1717836975
 Prefab:
   m_ObjectHideFlags: 0
@@ -159230,7 +159246,7 @@ GameObject:
   - component: {fileID: 1969382010}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
