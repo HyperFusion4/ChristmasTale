@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ToLevel2 : MonoBehaviour {
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene("Level2");
     }
+
 }

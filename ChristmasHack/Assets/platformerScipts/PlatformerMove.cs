@@ -17,10 +17,17 @@ public class PlatformerMove : MonoBehaviour {
         GetComponent<Animator>().SetFloat("X", x);
         bool idle = (x == 0);
         GetComponent<Animator>().SetBool("Idle", idle);
-
-        Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
-        velocity.x = moveX * moveSpeed;
-        GetComponent<Rigidbody2D>().velocity = velocity;
+        if (x != 0 && GetComponent<Rigidbody2D>().sharedMaterial.name == "Sliky")
+        {
+            Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
+            velocity.x = moveX * moveSpeed;
+            GetComponent<Rigidbody2D>().velocity = velocity;
+        }else if(!(GetComponent<Rigidbody2D>().sharedMaterial.name == "Sliky"))
+        {
+            Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
+            velocity.x = moveX * moveSpeed;
+            GetComponent<Rigidbody2D>().velocity = velocity;
+        }
         if (Input.GetButtonDown("Jump") && grounded)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100 * jumpSpeed));

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-class ToLevel3 : MonoBehaviour {
-
-    private void OnCollisionEnter2D(Collision2D collision)
+public class ToLevel3 : MonoBehaviour {
+    void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene("Level3");
     }
